@@ -23,7 +23,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="LSH-Ko-J7k" kind="show" id="cNC-fi-cwu"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -401,6 +405,112 @@
             </objects>
             <point key="canvasLocation" x="75" y="-59"/>
         </scene>
+        <!--Preferences Window Controller-->
+        <scene sceneID="dEB-HL-Vun">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="LSH-Ko-J7k" userLabel="Preferences Window Controller" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="N9E-5i-TyD">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="229" y="249" width="480" height="99"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1600" height="900"/>
+                    </window>
+                    <connections>
+                        <segue destination="caW-iv-Ge8" kind="relationship" relationship="window.shadowedContentViewController" id="Kxf-Ha-AJI"/>
+                    </connections>
+                </windowController>
+                <customObject id="c2V-0H-C5i" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802" y="147"/>
+        </scene>
+        <!--Preferences Tab View Controller-->
+        <scene sceneID="9nY-Af-kXR">
+            <objects>
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="caW-iv-Ge8" userLabel="Preferences Tab View Controller" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" image="NSPreferencesGeneral" id="WNX-BV-46t"/>
+                    </tabViewItems>
+                    <tabView key="tabView" misplaced="YES" type="noTabsNoBorder" id="aoc-w0-qjy">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="350"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <connections>
+                        <segue destination="1aG-YB-5jA" kind="relationship" relationship="tabItems" id="QOb-Qu-0xz"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="Mf8-5X-cfA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802" y="554"/>
+        </scene>
+        <!--Preferences General View Controller-->
+        <scene sceneID="8wg-mZ-KhX">
+            <objects>
+                <viewController title="General" id="1aG-YB-5jA" userLabel="Preferences General View Controller" customClass="MFGeneralPreferencesViewController" customModule="macfeh" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="fKt-h7-5Fe">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="99"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XfS-lP-otL" userLabel="Viewer Defaults Section Label">
+                                <rect key="frame" x="18" y="62" width="99" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="BNn-rn-vRi"/>
+                                    <constraint firstAttribute="height" constant="17" id="inp-XO-seS"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Viewer Defaults" id="uoZ-D1-N8K">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-ZQ-iZH" userLabel="Show Background Checkbox">
+                                <rect key="frame" x="30" y="38" width="131" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="cqw-J5-ka8"/>
+                                    <constraint firstAttribute="height" constant="14" id="gTe-Mr-0sM"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Show background" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="03L-dn-GcW">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="viewerDefaultsShowBackgroundCheckboxAction:" target="1aG-YB-5jA" id="NeJ-uC-fRo"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="hq7-KP-K6M" userLabel="Enable Shadow Checkbox">
+                                <rect key="frame" x="30" y="18" width="114" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="gY7-kE-Lkf"/>
+                                    <constraint firstAttribute="height" constant="14" id="wZq-pq-jwg"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Enable shadow" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="e2X-3e-gcA">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="viewerDefaultsEnableShadowCheckboxAction:" target="1aG-YB-5jA" id="BIo-g0-e0R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Nbk-ZQ-iZH" firstAttribute="leading" secondItem="fKt-h7-5Fe" secondAttribute="leading" constant="32" id="6E3-5j-8KD"/>
+                            <constraint firstItem="hq7-KP-K6M" firstAttribute="leading" secondItem="fKt-h7-5Fe" secondAttribute="leading" constant="32" id="6Uf-65-ezp"/>
+                            <constraint firstItem="hq7-KP-K6M" firstAttribute="top" secondItem="Nbk-ZQ-iZH" secondAttribute="bottom" constant="6" id="Oyh-ux-UGf"/>
+                            <constraint firstItem="XfS-lP-otL" firstAttribute="leading" secondItem="fKt-h7-5Fe" secondAttribute="leading" constant="20" id="Vhl-J1-yRu"/>
+                            <constraint firstItem="Nbk-ZQ-iZH" firstAttribute="top" secondItem="XfS-lP-otL" secondAttribute="bottom" constant="8" id="ctr-ZB-SNo"/>
+                            <constraint firstItem="XfS-lP-otL" firstAttribute="top" secondItem="fKt-h7-5Fe" secondAttribute="top" constant="20" id="j3J-1z-B73"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="viewerDefaultsEnableShadowCheckbox" destination="hq7-KP-K6M" id="DcM-PH-EgO"/>
+                        <outlet property="viewerDefaultsShowBackgroundCheckbox" destination="Nbk-ZQ-iZH" id="IUi-mH-voP"/>
+                    </connections>
+                </viewController>
+                <customObject id="oSO-iJ-mJB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1416" y="429"/>
+        </scene>
         <!--Image Viewer Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
@@ -458,4 +568,7 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
+    </resources>
 </document>

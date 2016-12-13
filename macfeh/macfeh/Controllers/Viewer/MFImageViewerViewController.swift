@@ -102,6 +102,13 @@ class MFImageViewerViewController: NSViewController {
                     // Update the window title
                     self.window!.title = NSString(string: path).lastPathComponent;
                     
+                    // Update the defaults to match the preferences
+                    self.backgroundVisible = !(NSApp.delegate as! AppDelegate).preferences.viewerDefaultsShowBackground;
+                    self.shadowVisible = !(NSApp.delegate as! AppDelegate).preferences.viewerDefaultsEnableShadow;
+                    
+                    self.toggleBackground();
+                    self.toggleShadow();
+                    
                     // Set `representedImage`
                     self.representedImage = image;
                 }

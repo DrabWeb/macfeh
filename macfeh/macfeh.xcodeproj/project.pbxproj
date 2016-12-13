@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE5817B61DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5817B51DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift */; };
+		AE5817BA1DFFD52200AA74AE /* MFPreferencesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5817B91DFFD52200AA74AE /* MFPreferencesObject.swift */; };
 		AED309481DFF976B0053AA53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309471DFF976B0053AA53 /* AppDelegate.swift */; };
 		AED3094C1DFF976B0053AA53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED3094B1DFF976B0053AA53 /* Assets.xcassets */; };
 		AED3094F1DFF976B0053AA53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED3094D1DFF976B0053AA53 /* Main.storyboard */; };
 		AED3095A1DFF976B0053AA53 /* macfehTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309591DFF976B0053AA53 /* macfehTests.swift */; };
 		AED309651DFF976B0053AA53 /* macfehUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309641DFF976B0053AA53 /* macfehUITests.swift */; };
-		AED309741DFF97F00053AA53 /* MFImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309731DFF97F00053AA53 /* MFImageViewerViewController.swift */; };
 		AED309781DFF99DC0053AA53 /* MFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309771DFF99DC0053AA53 /* MFImageView.swift */; };
 		AED3097B1DFF9BA70053AA53 /* MFImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3097A1DFF9BA70053AA53 /* MFImageExtensions.swift */; };
+		AEED5EAB1DFFD38100649545 /* MFImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED5EAA1DFFD38100649545 /* MFImageViewerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE5817B51DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFGeneralPreferencesViewController.swift; sourceTree = "<group>"; };
+		AE5817B91DFFD52200AA74AE /* MFPreferencesObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFPreferencesObject.swift; sourceTree = "<group>"; };
 		AED309441DFF976B0053AA53 /* macfeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macfeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED309471DFF976B0053AA53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AED3094B1DFF976B0053AA53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,9 +50,9 @@
 		AED309601DFF976B0053AA53 /* macfehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macfehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED309641DFF976B0053AA53 /* macfehUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macfehUITests.swift; sourceTree = "<group>"; };
 		AED309661DFF976B0053AA53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AED309731DFF97F00053AA53 /* MFImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageViewerViewController.swift; sourceTree = "<group>"; };
 		AED309771DFF99DC0053AA53 /* MFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageView.swift; sourceTree = "<group>"; };
 		AED3097A1DFF9BA70053AA53 /* MFImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageExtensions.swift; sourceTree = "<group>"; };
+		AEED5EAA1DFFD38100649545 /* MFImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageViewerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE5817B71DFFD50800AA74AE /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				AE5817B81DFFD50F00AA74AE /* Preferences */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		AE5817B81DFFD50F00AA74AE /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				AE5817B91DFFD52200AA74AE /* MFPreferencesObject.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
 		AED3093B1DFF976B0053AA53 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +122,7 @@
 				AED309471DFF976B0053AA53 /* AppDelegate.swift */,
 				AED309751DFF97F30053AA53 /* Storyboards */,
 				AED309721DFF97F00053AA53 /* Controllers */,
+				AE5817B71DFFD50800AA74AE /* Objects */,
 				AED309791DFF9B9C0053AA53 /* Utilities */,
 				AED309761DFF99D00053AA53 /* Views */,
 				AED3094B1DFF976B0053AA53 /* Assets.xcassets */,
@@ -131,7 +152,8 @@
 		AED309721DFF97F00053AA53 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AED309731DFF97F00053AA53 /* MFImageViewerViewController.swift */,
+				AEED5EA91DFFD38100649545 /* Viewer */,
+				AEED5EAC1DFFD38B00649545 /* Preferences */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +180,22 @@
 				AED3097A1DFF9BA70053AA53 /* MFImageExtensions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AEED5EA91DFFD38100649545 /* Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				AEED5EAA1DFFD38100649545 /* MFImageViewerViewController.swift */,
+			);
+			path = Viewer;
+			sourceTree = "<group>";
+		};
+		AEED5EAC1DFFD38B00649545 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				AE5817B51DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +332,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AED3097B1DFF9BA70053AA53 /* MFImageExtensions.swift in Sources */,
-				AED309741DFF97F00053AA53 /* MFImageViewerViewController.swift in Sources */,
+				AE5817B61DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift in Sources */,
+				AEED5EAB1DFFD38100649545 /* MFImageViewerViewController.swift in Sources */,
 				AED309781DFF99DC0053AA53 /* MFImageView.swift in Sources */,
+				AE5817BA1DFFD52200AA74AE /* MFPreferencesObject.swift in Sources */,
 				AED309481DFF976B0053AA53 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +576,7 @@
 				AED3096B1DFF976B0053AA53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AED3096C1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "macfehTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +585,7 @@
 				AED3096E1DFF976B0053AA53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AED3096F1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "macfehUITests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +594,7 @@
 				AED309711DFF976B0053AA53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

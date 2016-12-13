@@ -12,6 +12,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - Properties
     
+    /// The global preferences object for macfeh
+    var preferences : MFPreferencesObject = MFPreferencesObject();
+    
+    
     // MARK: - Menu Items
     
     /// File/Open ⌘O
@@ -33,7 +37,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Functions
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        // Load the preferences
+        loadPreferences();
         
         // Setup the menu items
         setupMenuItems();
@@ -114,8 +119,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItemToggleShadow.action = #selector(MFImageViewerViewController.toggleShadow);
         menuItemScaleToImage.action = #selector(MFImageViewerViewController.scaleToImage);
     }
+    
+    /// Saves the preferences
+    func savePreferences() {
+        /// The data for the preferences object
+        let data = NSKeyedArchiver.archivedData(withRootObject: preferences);
+        
+        // Set the standard user defaults preferences key to that data
+        UserDefaults.standard.set(data, forKey: "preferences");
+        
+        // Synchronize the data
+        UserDefaults.standard.synchronize();
+    }
+    
+    /// Loads the preferences
+    func loadPreferences() {
+        // If we have any data to load...
+        if let data = UserDefaults.standard.object(forKey: "preferences") as? Data {
+            // Set the preferences object to the loaded object
+            preferences = (NSKeyedUnarchiver.unarchiveObject(with: data) as! MFPreferencesObject);
+        }
+    }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        // Save the preferences
+        savePreferences();
     }
 }
