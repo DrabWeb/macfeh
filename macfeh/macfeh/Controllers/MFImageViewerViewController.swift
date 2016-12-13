@@ -99,6 +99,9 @@ class MFImageViewerViewController: NSViewController {
                     self.imageView.canDrawSubviewsIntoLayer = path.hasSuffix(".gif");
                     self.imageView.animates = path.hasSuffix(".gif");
                     
+                    // Update the window title
+                    self.window!.title = NSString(string: path).lastPathComponent;
+                    
                     // Set `representedImage`
                     self.representedImage = image;
                 }
