@@ -42,21 +42,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Setup the menu items
         setupMenuItems();
-        
-        /// The arguments to enumerate for searching for files
-        var fileArguments : [String] = ProcessInfo.processInfo.arguments;
-        
-        // Remove the first argument from `fileArguments`(it's always the path to the binary)
-        fileArguments.removeFirst();
-        
-        // For every argument passed to the application...
-        for(_, currentArgument) in fileArguments.enumerated() {
-            // If the current argument starts with a /(which will usually mean it's a file)...
-            if(currentArgument.hasPrefix("/")) {
-                // Open a viewer for the current argument
-                openNewViewer(for: currentArgument);
-            }
-        }
     }
     
     func application(_ sender: NSApplication, openFiles filenames: [String]) {
