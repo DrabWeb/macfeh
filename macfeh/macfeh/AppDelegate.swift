@@ -48,12 +48,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: - Functions
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Load the preferences
-        loadPreferences();
-        
+    func applicationWillFinishLaunching(_ notification: Notification) {
         // Setup the menu items
         setupMenuItems();
+        
+        // Load the preferences
+        loadPreferences();
     }
     
     func application(_ sender: NSApplication, openFiles filenames: [String]) {
