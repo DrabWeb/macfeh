@@ -96,11 +96,8 @@ class MFImageViewerViewController: NSViewController {
                     self.window!.title = NSString(string: path).lastPathComponent;
                     
                     // Update the defaults to match the preferences
-                    self.backgroundVisible = !(NSApp.delegate as! AppDelegate).preferences.viewerDefaultsShowBackground;
-                    self.shadowVisible = !(NSApp.delegate as! AppDelegate).preferences.viewerDefaultsEnableShadow;
-                    
-                    self.toggleBackground();
-                    self.toggleShadow();
+                    self.showBackground((NSApp.delegate as! AppDelegate).preferences.viewerDefaultsShowBackground);
+                    self.showShadow((NSApp.delegate as! AppDelegate).preferences.viewerDefaultsEnableShadow);
                     
                     // Set `representedImage`
                     self.representedImage = image;
@@ -146,11 +143,15 @@ class MFImageViewerViewController: NSViewController {
     
     /// Toggles the background of this image viewer
     func toggleBackground() {
-        // Toggle `backgroundVisible`
-        self.backgroundVisible = !backgroundVisible;
-        
         // Show/hide the background based on `backgroundVisible`
-        if(backgroundVisible) {
+        self.showBackground(!self.backgroundVisible);
+    }
+    
+    /// Shows/hides the background of this viewer based on `state`
+    ///
+    /// - Parameter state: Should the window background be visible?
+    func showBackground(_ state : Bool) {
+        if(state) {
             self.window!.isOpaque = true;
             self.window!.backgroundColor = NSColor(catalogName: "System", colorName: "windowBackgroundColor");
         }
@@ -158,15 +159,23 @@ class MFImageViewerViewController: NSViewController {
             self.window!.isOpaque = false;
             self.window!.backgroundColor = NSColor(calibratedWhite: 0, alpha: 0);
         }
+        
+        self.backgroundVisible = state;
     }
     
     /// Toggles the shadow of this image viewer
     func toggleShadow() {
-        /// Toggle `shadowVisible`
-        self.shadowVisible = !shadowVisible;
-        
         // Show/hide the shadow based on `shadowVisible`
-        self.window!.hasShadow = self.shadowVisible;
+        self.showShadow(!self.shadowVisible);
+    }
+    
+    /// Shows/hides the shadow of this viewer based on `state`
+    ///
+    /// - Parameter state: Should the window shadow be visible?
+    func showShadow(_ state : Bool) {
+        self.window!.hasShadow = state;
+        
+        self.shadowVisible = state;
     }
     
     /// Scales this viewer to the pixel size of the image it's displaying
