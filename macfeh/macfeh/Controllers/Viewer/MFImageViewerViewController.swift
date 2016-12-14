@@ -187,7 +187,13 @@ class MFImageViewerViewController: NSViewController {
         
         // Set the image view's scroll view's scroll zoom handler
         self.imageViewScrollView.scrollZoomHandler = { event in
-            // Zoom using the mouse wheel
+            // Zoom in/out based on the Y scroll delta
+            if(event.deltaY < 0) {
+                self.zoomOut();
+            }
+            else {
+                self.zoomIn();
+            }
         };
         
         // Start the loading spinner
