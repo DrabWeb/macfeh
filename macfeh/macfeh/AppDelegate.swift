@@ -153,6 +153,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let data = UserDefaults.standard.object(forKey: "preferences") as? Data {
             // Set the preferences object to the loaded object
             preferences = (NSKeyedUnarchiver.unarchiveObject(with: data) as! MFPreferencesObject);
+            
+            // Say the preferences have been loaded
+            self.preferencesLoaded = true;
         }
     }
 
