@@ -15,6 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// The global preferences object for macfeh
     var preferences : MFPreferencesObject = MFPreferencesObject();
     
+    /// Have the preferences already been loaded?
+    private var preferencesLoaded : Bool = false;
+    
     
     // MARK: - Menu Items
     
@@ -57,6 +60,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func application(_ sender: NSApplication, openFiles filenames: [String]) {
+        // Make sure the preferences are loaded
+        loadPreferences();
+        
         // Open a viewer for each file
         for(_, currentFile) in filenames.enumerated() {
             self.openNewViewer(for: currentFile);
@@ -64,6 +70,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        // Make sure the preferences are loaded
+        loadPreferences();
+        
         // Open a viewer for the file
         self.openNewViewer(for: filename);
         
@@ -135,6 +144,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     /// Loads the preferences
     func loadPreferences() {
+        // If the preferences have already been loaded don't load them
+        if(preferencesLoaded) {
+            return;
+        }
+        
         // If we have any data to load...
         if let data = UserDefaults.standard.object(forKey: "preferences") as? Data {
             // Set the preferences object to the loaded object
