@@ -11,6 +11,7 @@ macOS 10.11+ (tested on 10.12)
 
 ## Features
 * Borderless rounded viewer
+* Zoom and scroll
 * Toggle viewer background/shadows
 * Command line support
 
