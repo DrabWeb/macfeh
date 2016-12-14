@@ -20,4 +20,11 @@ class MFImageViewerImageView: IKImageView {
     override func mouseDragged(with event: NSEvent) {
         self.window?.performDrag(with: event);
     }
+    
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect);
+        
+        // Always use maximum image interpolation for highest quality
+        NSGraphicsContext.current()?.imageInterpolation = .high;
+    }
 }
