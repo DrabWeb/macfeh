@@ -30,7 +30,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// View/Toggle Shadow ⌥⌘S
     @IBOutlet weak var menuItemToggleShadow: NSMenuItem!
     
-    /// View/Scale to Image ⌘1
+    /// View/Actual Size ⌘1
+    @IBOutlet weak var menuItemActualSize: NSMenuItem!
+    
+    /// View/Zoom to Fit ⌘0
+    @IBOutlet weak var menuItemZoomToFit: NSMenuItem!
+    
+    /// View/Zoom In ⌘=
+    @IBOutlet weak var menuItemZoomIn: NSMenuItem!
+    
+    /// View/Zoom Out ⌘-
+    @IBOutlet weak var menuItemZoomOut: NSMenuItem!
+    
+    /// View/Scale to Image ⌘2
     @IBOutlet weak var menuItemScaleToImage: NSMenuItem!
     
     
@@ -102,6 +114,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Setup the menu items
         menuItemToggleBackground.action = #selector(MFImageViewerViewController.toggleBackground);
         menuItemToggleShadow.action = #selector(MFImageViewerViewController.toggleShadow);
+        menuItemActualSize.action = #selector(MFImageViewerViewController.zoomToActualSize);
+        menuItemZoomToFit.action = #selector(MFImageViewerViewController.zoomToFit);
+        menuItemZoomIn.action = #selector(MFImageViewerViewController.zoomIn);
+        menuItemZoomOut.action = #selector(MFImageViewerViewController.zoomOut);
         menuItemScaleToImage.action = #selector(MFImageViewerViewController.scaleToImage);
     }
     

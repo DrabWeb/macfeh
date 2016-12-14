@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.imagekit.ibplugin" version="11542"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -333,6 +333,11 @@
                                         <menuItem title="Toggle Shadow" keyEquivalent="s" id="KX8-xx-4Rh">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Zhu-w6-fzo"/>
+                                        <menuItem title="Actual Size" keyEquivalent="1" id="JVz-Z0-d2O"/>
+                                        <menuItem title="Zoom to Fit" keyEquivalent="0" id="a1V-pX-jLY"/>
+                                        <menuItem title="Zoom In" keyEquivalent="=" id="Ep5-i2-jZf"/>
+                                        <menuItem title="Zoom Out" keyEquivalent="-" id="y5J-V4-lXk"/>
                                         <menuItem isSeparatorItem="YES" id="df6-Ia-blk"/>
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
@@ -365,7 +370,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Gs6-wS-Kru"/>
-                                        <menuItem title="Scale to Image" keyEquivalent="1" id="SLP-HQ-7fy"/>
+                                        <menuItem title="Scale to Image" keyEquivalent="2" id="SLP-HQ-7fy"/>
                                         <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
                                         <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -396,9 +401,13 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="macfeh" customModuleProvider="target">
                     <connections>
+                        <outlet property="menuItemActualSize" destination="JVz-Z0-d2O" id="5xQ-Wf-p8e"/>
                         <outlet property="menuItemScaleToImage" destination="SLP-HQ-7fy" id="dbe-bg-7tY"/>
                         <outlet property="menuItemToggleBackground" destination="XcS-fr-0og" id="3WB-qt-0eH"/>
                         <outlet property="menuItemToggleShadow" destination="KX8-xx-4Rh" id="pl9-Fj-uMs"/>
+                        <outlet property="menuItemZoomIn" destination="Ep5-i2-jZf" id="oic-IW-SMi"/>
+                        <outlet property="menuItemZoomOut" destination="y5J-V4-lXk" id="d6A-6d-5HE"/>
+                        <outlet property="menuItemZoomToFit" destination="a1V-pX-jLY" id="78Y-fO-wX4"/>
                     </connections>
                 </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -544,22 +553,43 @@
                                     <constraint firstAttribute="height" constant="16" id="Zpw-PP-KXN"/>
                                 </constraints>
                             </progressIndicator>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="2z8-ns-5qz" customClass="MFImageView" customModule="macfeh" customModuleProvider="target">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayc-qS-gaP" userLabel="Scroll View - Image View" customClass="MFImageViewerScrollView" customModule="macfeh" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="ZOi-73-NZX"/>
-                            </imageView>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Lx1-TI-0HF">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <ikImageView wantsLayer="YES" fixedFrame="YES" zoomFactor="0.0" supportsDragAndDrop="NO" doubleClickOpensImageEditPanel="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET6-I9-Mv4" customClass="MFImageViewerImageView" customModule="macfeh" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <color key="backgroundColor" red="0.50002289" green="0.50002289" blue="0.50002289" alpha="0.0" colorSpace="deviceRGB"/>
+                                        </ikImageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <edgeInsets key="contentInsets" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="iCt-5u-4QU">
+                                    <rect key="frame" x="0.0" y="254" width="480" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="sbX-G0-P3e">
+                                    <rect key="frame" x="464" y="0.0" width="16" height="270"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="2z8-ns-5qz" secondAttribute="trailing" id="WF4-tl-uxq"/>
-                            <constraint firstItem="2z8-ns-5qz" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bNC-TS-aVh"/>
-                            <constraint firstAttribute="bottom" secondItem="2z8-ns-5qz" secondAttribute="bottom" id="lIx-lA-rjg"/>
+                            <constraint firstItem="ayc-qS-gaP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="80H-Tw-I0t"/>
+                            <constraint firstItem="ayc-qS-gaP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="fHg-45-OB2"/>
+                            <constraint firstAttribute="trailing" secondItem="ayc-qS-gaP" secondAttribute="trailing" id="iua-BL-xDu"/>
+                            <constraint firstAttribute="bottom" secondItem="ayc-qS-gaP" secondAttribute="bottom" id="k2h-Bb-nCk"/>
                             <constraint firstItem="1hx-oH-TT1" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="nY1-02-eWb"/>
-                            <constraint firstItem="2z8-ns-5qz" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="omi-7X-QcT"/>
                             <constraint firstItem="1hx-oH-TT1" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="rCf-6A-bZb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="2z8-ns-5qz" id="FVp-oF-fTc"/>
+                        <outlet property="imageView" destination="ET6-I9-Mv4" id="awN-xF-Vt4"/>
+                        <outlet property="imageViewScrollView" destination="ayc-qS-gaP" id="YLl-b4-ReC"/>
                         <outlet property="loadingSpinner" destination="1hx-oH-TT1" id="8Lr-YW-3KD"/>
                     </connections>
                 </viewController>

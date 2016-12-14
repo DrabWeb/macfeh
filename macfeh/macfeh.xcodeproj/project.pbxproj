@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE47904B1E009D8D00BB2038 /* MFImageViewerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47904A1E009D8D00BB2038 /* MFImageViewerScrollView.swift */; };
+		AE47904D1E009FC300BB2038 /* MFImageViewerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE47904C1E009FC300BB2038 /* MFImageViewerImageView.swift */; };
 		AE5817B61DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5817B51DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift */; };
 		AE5817BA1DFFD52200AA74AE /* MFPreferencesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5817B91DFFD52200AA74AE /* MFPreferencesObject.swift */; };
 		AED309481DFF976B0053AA53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309471DFF976B0053AA53 /* AppDelegate.swift */; };
@@ -14,7 +16,6 @@
 		AED3094F1DFF976B0053AA53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED3094D1DFF976B0053AA53 /* Main.storyboard */; };
 		AED3095A1DFF976B0053AA53 /* macfehTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309591DFF976B0053AA53 /* macfehTests.swift */; };
 		AED309651DFF976B0053AA53 /* macfehUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309641DFF976B0053AA53 /* macfehUITests.swift */; };
-		AED309781DFF99DC0053AA53 /* MFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309771DFF99DC0053AA53 /* MFImageView.swift */; };
 		AED3097B1DFF9BA70053AA53 /* MFImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3097A1DFF9BA70053AA53 /* MFImageExtensions.swift */; };
 		AEED5EAB1DFFD38100649545 /* MFImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED5EAA1DFFD38100649545 /* MFImageViewerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE47904A1E009D8D00BB2038 /* MFImageViewerScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageViewerScrollView.swift; sourceTree = "<group>"; };
+		AE47904C1E009FC300BB2038 /* MFImageViewerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageViewerImageView.swift; sourceTree = "<group>"; };
 		AE5817B51DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFGeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		AE5817B91DFFD52200AA74AE /* MFPreferencesObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFPreferencesObject.swift; sourceTree = "<group>"; };
 		AED309441DFF976B0053AA53 /* macfeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macfeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +53,6 @@
 		AED309601DFF976B0053AA53 /* macfehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macfehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED309641DFF976B0053AA53 /* macfehUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macfehUITests.swift; sourceTree = "<group>"; };
 		AED309661DFF976B0053AA53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AED309771DFF99DC0053AA53 /* MFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageView.swift; sourceTree = "<group>"; };
 		AED3097A1DFF9BA70053AA53 /* MFImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageExtensions.swift; sourceTree = "<group>"; };
 		AEED5EAA1DFFD38100649545 /* MFImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFImageViewerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,7 +171,8 @@
 		AED309761DFF99D00053AA53 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AED309771DFF99DC0053AA53 /* MFImageView.swift */,
+				AE47904A1E009D8D00BB2038 /* MFImageViewerScrollView.swift */,
+				AE47904C1E009FC300BB2038 /* MFImageViewerImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,10 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE47904B1E009D8D00BB2038 /* MFImageViewerScrollView.swift in Sources */,
 				AED3097B1DFF9BA70053AA53 /* MFImageExtensions.swift in Sources */,
+				AE47904D1E009FC300BB2038 /* MFImageViewerImageView.swift in Sources */,
 				AE5817B61DFFD46B00AA74AE /* MFGeneralPreferencesViewController.swift in Sources */,
 				AEED5EAB1DFFD38100649545 /* MFImageViewerViewController.swift in Sources */,
-				AED309781DFF99DC0053AA53 /* MFImageView.swift in Sources */,
 				AE5817BA1DFFD52200AA74AE /* MFPreferencesObject.swift in Sources */,
 				AED309481DFF976B0053AA53 /* AppDelegate.swift in Sources */,
 			);
@@ -480,6 +484,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = macfeh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = drabweb.macfeh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -493,6 +498,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = macfeh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = drabweb.macfeh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

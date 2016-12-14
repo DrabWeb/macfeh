@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import Quartz
 
 class MFImageViewerViewController: NSViewController {
 
@@ -14,8 +15,11 @@ class MFImageViewerViewController: NSViewController {
     /// The window of this view controller
     var window : NSWindow? = nil;
     
+    /// The scroll view for `imageView`
+    @IBOutlet weak var imageViewScrollView: MFImageViewerScrollView!
+    
     /// The image view for this image viewer
-    @IBOutlet weak var imageView: MFImageView!
+    @IBOutlet weak var imageView: IKImageView!
     
     /// The loading spinner to show while the image is loading
     @IBOutlet weak var loadingSpinner: NSProgressIndicator!
@@ -28,6 +32,9 @@ class MFImageViewerViewController: NSViewController {
     
     /// The image this viewer is displaying(if any)
     var representedImage : NSImage? = nil;
+    
+    /// The size of `representedImage`
+    var representedImageSize : NSSize? = nil;
     
     
     // MARK: - Functions
@@ -51,23 +58,13 @@ class MFImageViewerViewController: NSViewController {
             
             // If `image` isn't nil...
             if(image != nil) {
-                /// Get the smaller image representations(so really large images don't lag when resizing)
-                let imageHalf : NSImage = image!.scaledByFactor(0.5);
-                let imageHalfHalf : NSImage = imageHalf.scaledByFactor(0.5);
-                let imageHalfHalfHalf : NSImage = imageHalfHalf.scaledByFactor(0.5);
-                
-                // Add the image representations
-                image!.addRepresentation(imageHalf.representations.first!);
-                image!.addRepresentation(imageHalfHalf.representations.first!);
-                image!.addRepresentation(imageHalfHalfHalf.representations.first!);
-                
                 DispatchQueue.main.async {
+                    // Set the image view's image
+                    self.imageView.setImageWith(URL(fileURLWithPath: path));
+                    
                     // Stop the loading spinner
                     self.loadingSpinner.stopAnimation(self);
                     self.loadingSpinner.isHidden = true;
-                    
-                    // Set the image view's image
-                    self.imageView.image = image;
                     
                     // Set the max window size to the pixel size of the image
                     self.window!.maxSize = imagePixelSize!;
@@ -95,10 +92,6 @@ class MFImageViewerViewController: NSViewController {
                         self.window!.setFrame(NSRect(x: self.window!.frame.origin.x, y: self.window!.frame.origin.y, width: imagePixelSize!.width, height: imagePixelSize!.height), display: false);
                     }
                     
-                    // Enable/disable animated GIF displaying based on if the image is animated
-                    self.imageView.canDrawSubviewsIntoLayer = path.hasSuffix(".gif");
-                    self.imageView.animates = path.hasSuffix(".gif");
-                    
                     // Update the window title
                     self.window!.title = NSString(string: path).lastPathComponent;
                     
@@ -123,6 +116,32 @@ class MFImageViewerViewController: NSViewController {
                 }
             }
         }
+    }
+    
+    /// Zooms out the image view
+    func zoomIn() {
+        self.imageView.zoomIn(self);
+    }
+    
+    /// Zooms in the image view
+    func zoomOut() {
+        self.imageView.zoomOut(self);
+        
+        // Enforce that the image can't be zoomed out smaller than the window
+        if(self.imageView.frame.width < self.window!.frame.width || self.imageView.frame.height < self.window!.frame.height) {
+            self.zoomToFit();
+        }
+    }
+    
+    /// Zooms the image view so it's image fits the image view
+    func zoomToFit() {
+        self.imageView.zoomImageToFit(self);
+        self.imageView.autoresizes = true;
+    }
+    
+    /// Zooms the image view so it's the exact pixel size of the image
+    func zoomToActualSize() {
+        self.imageView.zoomImageToActualSize(self);
     }
     
     /// Toggles the background of this image viewer
@@ -165,6 +184,11 @@ class MFImageViewerViewController: NSViewController {
         self.window!.styleMask.insert(NSWindowStyleMask.fullSizeContentView);
         self.window!.standardWindowButton(.closeButton)?.superview?.superview?.isHidden = true;
         self.window!.isMovableByWindowBackground = true;
+        
+        // Set the image view's scroll view's scroll zoom handler
+        self.imageViewScrollView.scrollZoomHandler = { event in
+            // Zoom using the mouse wheel
+        };
         
         // Start the loading spinner
         self.loadingSpinner.startAnimation(self);
