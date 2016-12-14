@@ -173,6 +173,9 @@ class MFImageViewerViewController: NSViewController {
     func scaleToImage() {
         // Set the window frame to the size of the represented image
         self.window?.setContentSize(self.representedImage?.pixelSize ?? self.window!.frame.size);
+        
+        // Zoom to the actual image size
+        self.zoomToActualSize();
     }
     
     /// Does various setup operations for this view controller
