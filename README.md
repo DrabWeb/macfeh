@@ -6,7 +6,7 @@ Like feh, but on macOS
 
 
 ## Requirements
-macOS 10.10+ (tested on 10.12)
+macOS 10.11+ (tested on 10.12)
 
 
 ## Features
