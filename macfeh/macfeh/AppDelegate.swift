@@ -91,7 +91,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openPanel.allowedFileTypes = NSImage.imageTypes();
         
         // Run the open panel, and if the user selects "Open"...
-        if(Bool(openPanel.runModal() as NSNumber)) {
+        if(openPanel.runModal() == NSModalResponseOK) {
             // For every opened file...
             for(_, currentFile) in openPanel.urls.enumerated() {
                 // Open a new viewer for the current file
@@ -105,10 +105,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// - Parameter file: The file to display in the viewer
     func openNewViewer(for file : String) {
         /// The `NSWindowController` for the new image viewer
-        let imageViewerWindowController : NSWindowController = NSStoryboard(name: "Main", bundle: nil) .instantiateController(withIdentifier: "imageViewerWindowController") as! NSWindowController;
+        weak var imageViewerWindowController : NSWindowController! = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "imageViewerWindowController") as! NSWindowController;
         
         /// The `MFImageViewerViewController` for `imageViewerWindowController`
-        let imageViewerViewController : MFImageViewerViewController = (imageViewerWindowController.contentViewController as! MFImageViewerViewController);
+        weak var imageViewerViewController : MFImageViewerViewController! = (imageViewerWindowController.contentViewController as! MFImageViewerViewController);
         
         // Load and show the window
         imageViewerWindowController.loadWindow();
@@ -116,6 +116,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Display the file in the new viewer
         imageViewerViewController.display(image: file);
+        
+        // Free the memory from `imageViewerWindowController` and `imageViewerViewController`
+        imageViewerWindowController = nil;
+        imageViewerViewController = nil;
     }
     
     /// Sets up the actions of all the menu items

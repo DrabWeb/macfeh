@@ -21,6 +21,11 @@ class MFImageViewerImageView: IKImageView {
         self.window?.performDrag(with: event);
     }
     
+    // Stop `IKImageView` from doing any of it's extra uneccessary stuff
+    override func flagsChanged(with event: NSEvent) { }
+    override func keyDown(with event: NSEvent) { }
+    override func keyUp(with event: NSEvent) { }
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect);
         

@@ -8,7 +8,7 @@
 import Cocoa
 import Quartz
 
-class MFImageViewerViewController: NSViewController {
+class MFImageViewerViewController: NSViewController, NSWindowDelegate {
 
     // MARK: - Variables
     
@@ -48,6 +48,9 @@ class MFImageViewerViewController: NSViewController {
     
     /// Displays the image at the given path in this image view
     func display(image path : String) {
+        // Add the image to recents
+        NSDocumentController.shared().noteNewRecentDocumentURL(URL(fileURLWithPath: path));
+        
         // Load the image at `path`
         DispatchQueue.global(qos: .background).async {
             /// The `NSImage` at `path`
@@ -192,6 +195,9 @@ class MFImageViewerViewController: NSViewController {
         // Get the window of this view controller
         self.window = NSApp.windows.last!;
         
+        // Set the window's delegate
+        self.window!.delegate = self;
+        
         // Style the window
         self.window!.styleMask.insert(NSWindowStyleMask.fullSizeContentView);
         self.window!.standardWindowButton(.closeButton)?.superview?.superview?.isHidden = true;
@@ -211,6 +217,16 @@ class MFImageViewerViewController: NSViewController {
         // Start the loading spinner
         self.loadingSpinner.startAnimation(self);
         self.loadingSpinner.isHidden = false;
+    }
+    
+    func windowShouldClose(_ sender: Any) -> Bool {
+        // Deinit everything
+        self.representedImage = nil;
+        self.representedImageSize = nil;
+        self.imageView = nil;
+        self.window = nil;
+        
+        return true;
     }
 }
 
