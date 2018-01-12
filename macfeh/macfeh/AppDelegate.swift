@@ -13,20 +13,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var preferencesLoaded: Bool = false;
     var preferences: Preferences = Preferences();
 
-    @IBOutlet private weak var menuItemToggleBackground: NSMenuItem!
-    @IBOutlet private weak var menuItemToggleShadow: NSMenuItem!
-    @IBOutlet private weak var menuItemActualSize: NSMenuItem!
-    @IBOutlet private weak var menuItemZoomToFit: NSMenuItem!
-    @IBOutlet private weak var menuItemZoomIn: NSMenuItem!
-    @IBOutlet private weak var menuItemZoomOut: NSMenuItem!
-    @IBOutlet private weak var menuItemScaleWindowToImage: NSMenuItem!
-
     @IBAction func menuItemOpenAction(_ sender: NSMenuItem) {
         promptForAndOpenViewer();
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
-        setupMenuItems();
         loadPreferences();
     }
     
@@ -46,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func promptForAndOpenViewer() {
-        let openPanel : NSOpenPanel = NSOpenPanel();
+        let openPanel: NSOpenPanel = NSOpenPanel();
 
         openPanel.allowsMultipleSelection = true;
         openPanel.canChooseDirectories = false;
@@ -70,17 +61,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 imageViewer.display(image: file);
             }
         }
-    }
-
-    func setupMenuItems() {
-        //todo: do these properly through interface builder
-        menuItemToggleBackground.action = #selector(ImageViewerController.toggleBackground);
-        menuItemToggleShadow.action = #selector(ImageViewerController.toggleShadow);
-        menuItemActualSize.action = #selector(ImageViewerController.zoomToActualSize);
-        menuItemZoomToFit.action = #selector(ImageViewerController.zoomToFit);
-        menuItemZoomIn.action = #selector(ImageViewerController.zoomIn);
-        menuItemZoomOut.action = #selector(ImageViewerController.zoomOut);
-        menuItemScaleWindowToImage.action = #selector(ImageViewerController.scaleWindowToImage);
     }
 
     func loadPreferences() {

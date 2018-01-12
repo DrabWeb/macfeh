@@ -21,6 +21,14 @@ class ImageViewerController: NSViewController, NSWindowDelegate {
     var representedImage: NSImage?
     var representedImageSize: NSSize?
 
+    @IBAction func toggleBackground(_ sender: NSMenuItem?) { toggleBackground(); }
+    @IBAction func toggleShadow(_ sender: NSMenuItem?) { toggleShadow(); }
+    @IBAction func zoomToActualSize(_ sender: NSMenuItem?) { zoomToActualSize(); }
+    @IBAction func zoomToFit(_ sender: NSMenuItem?) { zoomToFit(); }
+    @IBAction func zoomImageIn(_ sender: NSMenuItem?) { zoomIn(); }
+    @IBAction func zoomImageOut(_ sender: NSMenuItem?) { zoomOut(); }
+    @IBAction func scaleWindowToImage(_ sender: NSMenuItem?) { scaleWindowToImage(); }
+
     override func viewDidLoad() {
         super.viewDidLoad();
 
