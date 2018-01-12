@@ -28,7 +28,7 @@ To use macfeh from the command line, add
 
 ```bash
 function macfeh() {
-	open -b "drabweb.macfeh" "$@"
+    open -b "drabweb.macfeh" "$@"
 }
 ```
 
