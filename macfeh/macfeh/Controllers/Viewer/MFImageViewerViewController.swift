@@ -199,7 +199,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
         self.window!.delegate = self;
         
         // Style the window
-        self.window!.styleMask.insert(NSWindow.StyleMask.fullSizeContentView);
+        self.window!.styleMask.insert(.fullSizeContentView);
         self.window!.standardWindowButton(.closeButton)?.superview?.superview?.isHidden = true;
         self.window!.isMovableByWindowBackground = true;
         

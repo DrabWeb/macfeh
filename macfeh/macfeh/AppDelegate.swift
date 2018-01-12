@@ -91,7 +91,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openPanel.allowedFileTypes = NSImage.imageTypes;
         
         // Run the open panel, and if the user selects "Open"...
-        if(openPanel.runModal() == NSApplication.ModalResponse.OK) {
+        if(openPanel.runModal() == .OK) {
             // For every opened file...
             for(_, currentFile) in openPanel.urls.enumerated() {
                 // Open a new viewer for the current file
