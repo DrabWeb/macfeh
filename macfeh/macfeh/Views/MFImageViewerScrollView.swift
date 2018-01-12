@@ -7,22 +7,13 @@
 
 import Cocoa
 
-/// The `NSScrollView` subclass for `MFImageViewerViewController`'s image view scroll view
 class MFImageViewerScrollView: NSScrollView {
-    
-    // MARK: - Properties
-    
-    /// The handler for when the user scrolls while holding command, passed the event of the scroll
-    var scrollZoomHandler : ((NSEvent) -> ())? = nil;
-    
-    
-    // MARK: - Functions
-    
+
+    var onZoom: ((NSEvent) -> Void)?
+
     override func scrollWheel(with event: NSEvent) {
-        // If the user is holding the command key...
-        if((event.modifierFlags.rawValue & NSEvent.ModifierFlags.command.rawValue) != 0) {
-            // Call `scrollZoomHandler`
-            scrollZoomHandler?(event);
+        if (event.modifierFlags.rawValue & NSEvent.ModifierFlags.command.rawValue) != 0 {
+            onZoom?(event);
         }
         else {
             super.scrollWheel(with: event);

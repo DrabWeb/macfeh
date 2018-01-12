@@ -31,7 +31,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
         window!.standardWindowButton(.closeButton)?.superview?.superview?.isHidden = true;
         window!.isMovableByWindowBackground = true;
 
-        imageViewScrollView.scrollZoomHandler = { event in
+        imageViewScrollView.onZoom = { event in
             if event.deltaY < 0 {
                 self.zoomOut();
             }
