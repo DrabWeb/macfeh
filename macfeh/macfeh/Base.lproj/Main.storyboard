@@ -422,10 +422,10 @@
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="N9E-5i-TyD">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="229" y="249" width="480" height="99"/>
+                        <rect key="contentRect" x="229" y="249" width="345" height="99"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1600" height="900"/>
-                        <value key="minSize" type="size" width="480" height="99"/>
-                        <value key="maxSize" type="size" width="480" height="99"/>
+                        <value key="minSize" type="size" width="345" height="99"/>
+                        <value key="maxSize" type="size" width="345" height="99"/>
                         <connections>
                             <outlet property="delegate" destination="LSH-Ko-J7k" id="Khe-lM-mcx"/>
                         </connections>
@@ -446,7 +446,7 @@
                         <tabViewItem identifier="" image="NSPreferencesGeneral" id="WNX-BV-46t"/>
                     </tabViewItems>
                     <tabView key="tabView" misplaced="YES" type="noTabsNoBorder" id="aoc-w0-qjy">
-                        <rect key="frame" x="-24" y="0.0" width="480" height="99"/>
+                        <rect key="frame" x="-24" y="0.0" width="345" height="99"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <font key="font" metaFont="message"/>
                         <tabViewItems/>
@@ -461,18 +461,18 @@
                 </tabViewController>
                 <customObject id="Mf8-5X-cfA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="429"/>
+            <point key="canvasLocation" x="802" y="419"/>
         </scene>
         <!--Preferences General View Controller-->
         <scene sceneID="8wg-mZ-KhX">
             <objects>
                 <viewController title="General" id="1aG-YB-5jA" userLabel="Preferences General View Controller" customClass="MFGeneralPreferencesViewController" customModule="macfeh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="fKt-h7-5Fe">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="99"/>
+                        <rect key="frame" x="0.0" y="0.0" width="345" height="99"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfS-lP-otL" userLabel="Viewer Defaults Section Label">
-                                <rect key="frame" x="26" y="62" width="398" height="17"/>
+                                <rect key="frame" x="26" y="62" width="293" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Viewer Defaults" id="uoZ-D1-N8K">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -480,7 +480,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-ZQ-iZH" userLabel="Show Background Checkbox">
-                                <rect key="frame" x="48" y="38" width="354" height="18"/>
+                                <rect key="frame" x="48" y="38" width="249" height="18"/>
                                 <buttonCell key="cell" type="check" title="Show background" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="03L-dn-GcW">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -490,7 +490,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-KP-K6M" userLabel="Enable Shadow Checkbox">
-                                <rect key="frame" x="48" y="18" width="354" height="18"/>
+                                <rect key="frame" x="48" y="18" width="249" height="18"/>
                                 <buttonCell key="cell" type="check" title="Enable shadow" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="e2X-3e-gcA">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -520,7 +520,7 @@
                 </viewController>
                 <customObject id="oSO-iJ-mJB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1416" y="429"/>
+            <point key="canvasLocation" x="1344" y="419"/>
         </scene>
         <!--Image Viewer Window Controller-->
         <scene sceneID="R2V-B0-nI4">
