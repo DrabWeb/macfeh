@@ -403,7 +403,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="macfeh" customModuleProvider="target">
                     <connections>
                         <outlet property="menuItemActualSize" destination="JVz-Z0-d2O" id="5xQ-Wf-p8e"/>
-                        <outlet property="menuItemScaleToImage" destination="SLP-HQ-7fy" id="dbe-bg-7tY"/>
+                        <outlet property="menuItemScaleWindowToImage" destination="SLP-HQ-7fy" id="dbe-bg-7tY"/>
                         <outlet property="menuItemToggleBackground" destination="XcS-fr-0og" id="3WB-qt-0eH"/>
                         <outlet property="menuItemToggleShadow" destination="KX8-xx-4Rh" id="pl9-Fj-uMs"/>
                         <outlet property="menuItemZoomIn" destination="Ep5-i2-jZf" id="oic-IW-SMi"/>

@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var menuItemZoomOut: NSMenuItem!
     
     /// View/Scale to Image ⌘2
-    @IBOutlet weak var menuItemScaleToImage: NSMenuItem!
+    @IBOutlet weak var menuItemScaleWindowToImage: NSMenuItem!
     
     
     // MARK: - Functions
@@ -131,7 +131,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItemZoomToFit.action = #selector(MFImageViewerViewController.zoomToFit);
         menuItemZoomIn.action = #selector(MFImageViewerViewController.zoomIn);
         menuItemZoomOut.action = #selector(MFImageViewerViewController.zoomOut);
-        menuItemScaleToImage.action = #selector(MFImageViewerViewController.scaleToImage);
+        menuItemScaleWindowToImage.action = #selector(MFImageViewerViewController.scaleWindowToImage);
     }
     
     /// Saves the preferences
