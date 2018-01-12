@@ -88,10 +88,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openPanel.allowsMultipleSelection = true;
         openPanel.canChooseDirectories = false;
         openPanel.canChooseFiles = true;
-        openPanel.allowedFileTypes = NSImage.imageTypes();
+        openPanel.allowedFileTypes = NSImage.imageTypes;
         
         // Run the open panel, and if the user selects "Open"...
-        if(openPanel.runModal() == NSModalResponseOK) {
+        if(openPanel.runModal() == NSApplication.ModalResponse.OK) {
             // For every opened file...
             for(_, currentFile) in openPanel.urls.enumerated() {
                 // Open a new viewer for the current file
@@ -105,7 +105,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// - Parameter file: The file to display in the viewer
     func openNewViewer(for file : String) {
         /// The `NSWindowController` for the new image viewer
-        weak var imageViewerWindowController : NSWindowController! = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "imageViewerWindowController") as! NSWindowController;
+        weak var imageViewerWindowController : NSWindowController! = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "imageViewerWindowController")) as! NSWindowController;
         
         /// The `MFImageViewerViewController` for `imageViewerWindowController`
         weak var imageViewerViewController : MFImageViewerViewController! = (imageViewerWindowController.contentViewController as! MFImageViewerViewController);

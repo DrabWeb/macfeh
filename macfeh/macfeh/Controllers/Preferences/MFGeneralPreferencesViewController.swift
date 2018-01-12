@@ -18,7 +18,7 @@ class MFGeneralPreferencesViewController: NSViewController {
     /// The action for `viewerDefaultsShowBackgroundCheckbox`
     @IBAction func viewerDefaultsShowBackgroundCheckboxAction(_ sender: NSButton) {
         // Update the preferences to match
-        (NSApp.delegate as! AppDelegate).preferences.viewerDefaultsShowBackground = (sender.state == NSOnState) ? true : false;
+        (NSApp.delegate as! AppDelegate).preferences.viewerDefaultsShowBackground = (sender.state == .on) ? true : false;
     }
     
     /// The check box for setting the default of the shadow of a viewer being enabled
@@ -27,7 +27,7 @@ class MFGeneralPreferencesViewController: NSViewController {
     /// The action for `viewerDefaultsEnableShadowCheckbox`
     @IBAction func viewerDefaultsEnableShadowCheckboxAction(_ sender: NSButton) {
         // Update the preferences to match
-        (NSApp.delegate as! AppDelegate).preferences.viewerDefaultsEnableShadow = (sender.state == NSOnState) ? true : false;
+        (NSApp.delegate as! AppDelegate).preferences.viewerDefaultsEnableShadow = (sender.state == .on) ? true : false;
     }
     
     
@@ -43,7 +43,7 @@ class MFGeneralPreferencesViewController: NSViewController {
     /// Displays the values from the global preferences object
     func displayPreferences() {
         // Display all the values
-        viewerDefaultsShowBackgroundCheckbox.state = ((NSApp.delegate as! AppDelegate).preferences.viewerDefaultsShowBackground) ? 1 : 0;
-        viewerDefaultsEnableShadowCheckbox.state = ((NSApp.delegate as! AppDelegate).preferences.viewerDefaultsEnableShadow) ? 1 : 0;
+        viewerDefaultsShowBackgroundCheckbox.state = NSControl.StateValue(rawValue: ((NSApp.delegate as! AppDelegate).preferences.viewerDefaultsShowBackground) ? 1 : 0);
+        viewerDefaultsEnableShadowCheckbox.state = NSControl.StateValue(rawValue: ((NSApp.delegate as! AppDelegate).preferences.viewerDefaultsEnableShadow) ? 1 : 0);
     }
 }

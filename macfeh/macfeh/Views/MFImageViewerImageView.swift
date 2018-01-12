@@ -30,6 +30,6 @@ class MFImageViewerImageView: IKImageView {
         super.draw(dirtyRect);
         
         // Always use maximum image interpolation for highest quality
-        NSGraphicsContext.current()?.imageInterpolation = .high;
+        NSGraphicsContext.current?.imageInterpolation = .high;
     }
 }
