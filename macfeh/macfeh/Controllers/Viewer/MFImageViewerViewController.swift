@@ -49,7 +49,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
     /// Displays the image at the given path in this image view
     func display(image path : String) {
         // Add the image to recents
-        NSDocumentController.shared().noteNewRecentDocumentURL(URL(fileURLWithPath: path));
+        NSDocumentController.shared.noteNewRecentDocumentURL(URL(fileURLWithPath: path));
         
         // Load the image at `path`
         DispatchQueue.global(qos: .background).async {
@@ -76,7 +76,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
                     self.window!.contentAspectRatio = imagePixelSize!;
                     
                     /// The size of the main screen
-                    let mainScreenSize : NSSize = NSScreen.main()!.frame.size;
+                    let mainScreenSize : NSSize = NSScreen.main!.frame.size;
                     
                     // If the image is larger than the screen on either width or height...
                     if(mainScreenSize.width < imagePixelSize!.width || mainScreenSize.height < imagePixelSize!.height) {
@@ -119,12 +119,12 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
     }
     
     /// Zooms out the image view
-    func zoomIn() {
+    @objc func zoomIn() {
         self.imageView.zoomIn(self);
     }
     
     /// Zooms in the image view
-    func zoomOut() {
+    @objc func zoomOut() {
         self.imageView.zoomOut(self);
         
         // Enforce that the image can't be zoomed out smaller than the window
@@ -134,18 +134,18 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
     }
     
     /// Zooms the image view so it's image fits the image view
-    func zoomToFit() {
+    @objc func zoomToFit() {
         self.imageView.zoomImageToFit(self);
         self.imageView.autoresizes = true;
     }
     
     /// Zooms the image view so it's the exact pixel size of the image
-    func zoomToActualSize() {
+    @objc func zoomToActualSize() {
         self.imageView.zoomImageToActualSize(self);
     }
     
     /// Toggles the background of this image viewer
-    func toggleBackground() {
+    @objc func toggleBackground() {
         // Show/hide the background based on `backgroundVisible`
         self.showBackground(!self.backgroundVisible);
     }
@@ -156,7 +156,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
     func showBackground(_ state : Bool) {
         if(state) {
             self.window!.isOpaque = true;
-            self.window!.backgroundColor = NSColor(catalogName: "System", colorName: "windowBackgroundColor");
+            self.window!.backgroundColor = NSColor(catalogName: NSColorList.Name(rawValue: "System"), colorName: NSColor.Name(rawValue: "windowBackgroundColor"));
         }
         else {
             self.window!.isOpaque = false;
@@ -167,7 +167,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
     }
     
     /// Toggles the shadow of this image viewer
-    func toggleShadow() {
+    @objc func toggleShadow() {
         // Show/hide the shadow based on `shadowVisible`
         self.showShadow(!self.shadowVisible);
     }
@@ -182,7 +182,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
     }
     
     /// Scales this viewer to the pixel size of the image it's displaying
-    func scaleToImage() {
+    @objc func scaleToImage() {
         // Set the window frame to the size of the represented image
         self.window?.setContentSize(self.representedImage?.pixelSize ?? self.window!.frame.size);
         
@@ -199,7 +199,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
         self.window!.delegate = self;
         
         // Style the window
-        self.window!.styleMask.insert(NSWindowStyleMask.fullSizeContentView);
+        self.window!.styleMask.insert(.fullSizeContentView);
         self.window!.standardWindowButton(.closeButton)?.superview?.superview?.isHidden = true;
         self.window!.isMovableByWindowBackground = true;
         
@@ -219,7 +219,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
         self.loadingSpinner.isHidden = false;
     }
     
-    func windowShouldClose(_ sender: Any) -> Bool {
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
         // Deinit everything
         self.representedImage = nil;
         self.representedImageSize = nil;

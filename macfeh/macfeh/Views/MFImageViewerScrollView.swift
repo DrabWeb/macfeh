@@ -20,7 +20,7 @@ class MFImageViewerScrollView: NSScrollView {
     
     override func scrollWheel(with event: NSEvent) {
         // If the user is holding the command key...
-        if((event.modifierFlags.rawValue & NSEventModifierFlags.command.rawValue) != 0) {
+        if((event.modifierFlags.rawValue & NSEvent.ModifierFlags.command.rawValue) != 0) {
             // Call `scrollZoomHandler`
             scrollZoomHandler?(event);
         }
