@@ -9,20 +9,11 @@ import Foundation
 import AppKit
 
 extension NSImage {
-    /// Gets the size of this image
-    ///
-    /// - Returns: The size in pixels of this image
-    var pixelSize : NSSize {
-        /// The `NSBitmapImageRep` to the image
-        var imageRep : NSBitmapImageRep? = (NSBitmapImageRep(data: self.tiffRepresentation!))!;
-        
-        /// The size of the image in pixels
-        let imageSize : NSSize = NSSize(width: imageRep!.pixelsWide, height: imageRep!.pixelsHigh);
-        
-        // Take the `imageRep` out of memory
-        imageRep = nil;
-        
-        // Return `imageSize`
-        return imageSize;
+    var pixelSize: NSSize {
+        if let imageRep = NSBitmapImageRep(data: self.tiffRepresentation!) {
+            return NSSize(width: imageRep.pixelsWide, height: imageRep.pixelsHigh);
+        }
+
+        return NSSize.zero;
     }
 }

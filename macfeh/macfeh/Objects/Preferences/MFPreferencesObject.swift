@@ -18,7 +18,7 @@ class MFPreferencesObject: NSObject, NSCoding {
     }
     
     required convenience init(coder decoder: NSCoder) {
-        init();
+        self.init();
 
         viewerDefaultsShowBackground = decoder.decodeBool(forKey: "viewerDefaultsShowBackground");
         viewerDefaultsEnableShadow = decoder.decodeBool(forKey: "viewerDefaultsEnableShadow");
