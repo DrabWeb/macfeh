@@ -1,5 +1,5 @@
 //
-//  MFImageViewerViewController.swift
+//  ImageViewerController.swift
 //  macfeh
 //
 //  Created by Ushio on 12/12/16.
@@ -8,11 +8,11 @@
 import Cocoa
 import Quartz
 
-class MFImageViewerViewController: NSViewController, NSWindowDelegate {
+class ImageViewerController: NSViewController, NSWindowDelegate {
 
     private var window: NSWindow?
 
-    @IBOutlet private weak var imageViewScrollView: MFImageViewerScrollView!
+    @IBOutlet private weak var imageViewScrollView: ImageViewerScrollView!
     @IBOutlet private weak var imageView: IKImageView!
     @IBOutlet private weak var loadingSpinner: NSProgressIndicator!
 
@@ -92,7 +92,7 @@ class MFImageViewerViewController: NSViewController, NSWindowDelegate {
                 }
             }
             else {
-                print("MFImageViewerViewController: No image at \"\(atPath)\"");
+                print("ImageViewerController: No image at \"\(atPath)\"");
                 
                 DispatchQueue.main.async {
                     self.window?.close();

@@ -11,7 +11,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var preferencesLoaded: Bool = false;
-    var preferences: MFPreferencesObject = MFPreferencesObject();
+    var preferences: Preferences = Preferences();
 
     @IBOutlet private weak var menuItemToggleBackground: NSMenuItem!
     @IBOutlet private weak var menuItemToggleShadow: NSMenuItem!
@@ -64,7 +64,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil);
 
         if let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "imageViewerWindowController")) as? NSWindowController {
-            if let imageViewer = windowController.contentViewController as? MFImageViewerViewController {
+            if let imageViewer = windowController.contentViewController as? ImageViewerController {
                 windowController.loadWindow();
                 windowController.showWindow(self);
                 imageViewer.display(image: file);
@@ -74,13 +74,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func setupMenuItems() {
         //todo: do these properly through interface builder
-        menuItemToggleBackground.action = #selector(MFImageViewerViewController.toggleBackground);
-        menuItemToggleShadow.action = #selector(MFImageViewerViewController.toggleShadow);
-        menuItemActualSize.action = #selector(MFImageViewerViewController.zoomToActualSize);
-        menuItemZoomToFit.action = #selector(MFImageViewerViewController.zoomToFit);
-        menuItemZoomIn.action = #selector(MFImageViewerViewController.zoomIn);
-        menuItemZoomOut.action = #selector(MFImageViewerViewController.zoomOut);
-        menuItemScaleWindowToImage.action = #selector(MFImageViewerViewController.scaleWindowToImage);
+        menuItemToggleBackground.action = #selector(ImageViewerController.toggleBackground);
+        menuItemToggleShadow.action = #selector(ImageViewerController.toggleShadow);
+        menuItemActualSize.action = #selector(ImageViewerController.zoomToActualSize);
+        menuItemZoomToFit.action = #selector(ImageViewerController.zoomToFit);
+        menuItemZoomIn.action = #selector(ImageViewerController.zoomIn);
+        menuItemZoomOut.action = #selector(ImageViewerController.zoomOut);
+        menuItemScaleWindowToImage.action = #selector(ImageViewerController.scaleWindowToImage);
     }
 
     func loadPreferences() {

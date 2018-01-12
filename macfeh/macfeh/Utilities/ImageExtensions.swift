@@ -1,5 +1,5 @@
 //
-//  MFImageExtensions.swift
+//  ImageExtensions.swift
 //  macfeh
 //
 //  Created by Ushio on 12/12/16.

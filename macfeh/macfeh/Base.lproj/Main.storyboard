@@ -419,7 +419,7 @@
         <scene sceneID="dEB-HL-Vun">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="LSH-Ko-J7k" userLabel="Preferences Window Controller" sceneMemberID="viewController">
-                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="N9E-5i-TyD" customClass="MFWindow" customModule="macfeh" customModuleProvider="target">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="N9E-5i-TyD" customClass="Window" customModule="macfeh" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="229" y="249" width="345" height="99"/>
@@ -466,7 +466,7 @@
         <!--Preferences General View Controller-->
         <scene sceneID="8wg-mZ-KhX">
             <objects>
-                <viewController title="General" id="1aG-YB-5jA" userLabel="Preferences General View Controller" customClass="MFGeneralPreferencesViewController" customModule="macfeh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="General" id="1aG-YB-5jA" userLabel="Preferences General View Controller" customClass="GeneralPreferencesController" customModule="macfeh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="fKt-h7-5Fe">
                         <rect key="frame" x="0.0" y="0.0" width="345" height="99"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -529,7 +529,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="imageViewerWindowController" id="B8D-0N-5wS" userLabel="Image Viewer Window Controller" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA" customClass="MFWindow" customModule="macfeh" customModuleProvider="target">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA" customClass="Window" customModule="macfeh" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -546,10 +546,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="232"/>
         </scene>
-        <!--Image Viewer View Controller-->
+        <!--Image Viewer Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MFImageViewerViewController" customModule="macfeh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ImageViewerController" customModule="macfeh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -561,13 +561,13 @@
                                     <constraint firstAttribute="height" constant="16" id="Zpw-PP-KXN"/>
                                 </constraints>
                             </progressIndicator>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayc-qS-gaP" userLabel="Scroll View - Image View" customClass="MFImageViewerScrollView" customModule="macfeh" customModuleProvider="target">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayc-qS-gaP" userLabel="Scroll View - Image View" customClass="ImageViewerScrollView" customModule="macfeh" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Lx1-TI-0HF">
                                     <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <ikImageView wantsLayer="YES" fixedFrame="YES" zoomFactor="0.0" supportsDragAndDrop="NO" doubleClickOpensImageEditPanel="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET6-I9-Mv4" customClass="MFImageViewerImageView" customModule="macfeh" customModuleProvider="target">
+                                        <ikImageView wantsLayer="YES" fixedFrame="YES" zoomFactor="0.0" supportsDragAndDrop="NO" doubleClickOpensImageEditPanel="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET6-I9-Mv4" customClass="ImageViewerImageView" customModule="macfeh" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" red="0.50002289" green="0.50002289" blue="0.50002289" alpha="0.0" colorSpace="deviceRGB"/>

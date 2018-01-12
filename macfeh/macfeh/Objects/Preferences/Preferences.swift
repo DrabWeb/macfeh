@@ -1,5 +1,5 @@
 //
-//  MFPreferencesObject.swift
+//  Preferences.swift
 //  macfeh
 //
 //  Created by Ushio on 12/13/16.
@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class MFPreferencesObject {
+class Preferences {
 
     var viewerDefaultsShowBackground: Bool = true;
     var viewerDefaultsEnableShadow: Bool = true;

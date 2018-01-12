@@ -1,5 +1,5 @@
 //
-//  MFImageViewerScrollView.swift
+//  ImageViewerScrollView.swift
 //  macfeh
 //
 //  Created by Ushio on 12/13/16.
@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class MFImageViewerScrollView: NSScrollView {
+class ImageViewerScrollView: NSScrollView {
 
     var onZoom: ((NSEvent) -> Void)?
 

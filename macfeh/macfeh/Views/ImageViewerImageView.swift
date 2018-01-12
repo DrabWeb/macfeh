@@ -1,5 +1,5 @@
 //
-//  MFImageViewerImageView.swift
+//  ImageViewerImageView.swift
 //  macfeh
 //
 //  Created by Ushio on 12/13/16.
@@ -8,7 +8,7 @@
 import Cocoa
 import Quartz
 
-class MFImageViewerImageView: IKImageView {
+class ImageViewerImageView: IKImageView {
 
     override var mouseDownCanMoveWindow: Bool {
         return true;

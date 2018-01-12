@@ -1,5 +1,5 @@
 //
-//  MFGeneralPreferencesViewController.swift
+//  GeneralPreferencesController.swift
 //  macfeh
 //
 //  Created by Ushio on 12/13/16.
@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class MFGeneralPreferencesViewController: NSViewController {
+class GeneralPreferencesController: NSViewController {
 
     @IBOutlet private weak var viewerDefaultsShowBackgroundCheckbox: NSButton!
     @IBAction func viewerDefaultsShowBackgroundAction(_ sender: NSButton) {
@@ -24,7 +24,7 @@ class MFGeneralPreferencesViewController: NSViewController {
         displayPreferences((NSApp.delegate as! AppDelegate).preferences);
     }
 
-    private func displayPreferences(_ preferences: MFPreferencesObject) {
+    private func displayPreferences(_ preferences: Preferences) {
         viewerDefaultsShowBackgroundCheckbox.state = NSControl.StateValue(rawValue: preferences.viewerDefaultsShowBackground ? 1 : 0);
         viewerDefaultsEnableShadowCheckbox.state = NSControl.StateValue(rawValue: preferences.viewerDefaultsEnableShadow ? 1 : 0);
     }
