@@ -83,24 +83,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItemScaleWindowToImage.action = #selector(MFImageViewerViewController.scaleWindowToImage);
     }
 
-    func savePreferences() {
-        let data = NSKeyedArchiver.archivedData(withRootObject: preferences);
-        UserDefaults.standard.set(data, forKey: "preferences");
-        UserDefaults.standard.synchronize();
-    }
-
     func loadPreferences() {
         if preferencesLoaded {
             return;
         }
 
-        if let data = UserDefaults.standard.object(forKey: "preferences") as? Data {
-            preferences = (NSKeyedUnarchiver.unarchiveObject(with: data) as! MFPreferencesObject);
-            preferencesLoaded = true;
-        }
+        preferences.load();
+        preferencesLoaded = true;
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        savePreferences();
+        preferences.save();
     }
 }

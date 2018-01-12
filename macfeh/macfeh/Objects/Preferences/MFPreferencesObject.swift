@@ -7,20 +7,29 @@
 
 import Cocoa
 
-class MFPreferencesObject: NSObject, NSCoding {
+class MFPreferencesObject {
 
     var viewerDefaultsShowBackground: Bool = true;
     var viewerDefaultsEnableShadow: Bool = true;
 
-    func encode(with coder: NSCoder) {
-        coder.encode(viewerDefaultsShowBackground, forKey: "viewerDefaultsShowBackground");
-        coder.encode(viewerDefaultsEnableShadow, forKey: "viewerDefaultsEnableShadow");
+    func save() {
+        UserDefaults.standard.setValue(viewerDefaultsShowBackground, forKey: PreferencesKey.showBackground.rawValue);
+        UserDefaults.standard.setValue(viewerDefaultsEnableShadow, forKey: PreferencesKey.enableShadow.rawValue);
+        UserDefaults.standard.synchronize();
     }
-    
-    required convenience init(coder decoder: NSCoder) {
-        self.init();
 
-        viewerDefaultsShowBackground = decoder.decodeBool(forKey: "viewerDefaultsShowBackground");
-        viewerDefaultsEnableShadow = decoder.decodeBool(forKey: "viewerDefaultsEnableShadow");
+    func load() {
+        if let showBackground = UserDefaults.standard.value(forKey: PreferencesKey.showBackground.rawValue) as? Bool {
+            viewerDefaultsShowBackground = showBackground;
+        }
+
+        if let enableShadow = UserDefaults.standard.value(forKey: PreferencesKey.enableShadow.rawValue) as? Bool {
+            viewerDefaultsEnableShadow = enableShadow;
+        }
+    }
+
+    private enum PreferencesKey: String {
+        case showBackground = "showBackground"
+        case enableShadow = "enableShadow"
     }
 }
