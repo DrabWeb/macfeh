@@ -8,28 +8,25 @@
 import Cocoa
 import Quartz
 
-/// The `IKImageView` subclass for the image view in `MFImageViewerViewController`
 class MFImageViewerImageView: IKImageView {
-    
-    // MARK: - Properties
-    
+
     override var mouseDownCanMoveWindow: Bool {
         return true;
     }
     
     override func mouseDragged(with event: NSEvent) {
-        self.window?.performDrag(with: event);
+        window?.performDrag(with: event);
     }
     
-    // Stop `IKImageView` from doing any of it's extra uneccessary stuff
+    // dont let IKImageView do anything special
     override func flagsChanged(with event: NSEvent) { }
     override func keyDown(with event: NSEvent) { }
     override func keyUp(with event: NSEvent) { }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect);
-        
-        // Always use maximum image interpolation for highest quality
+
+        // ive found that setting this results in the highest display quality for images
         NSGraphicsContext.current?.imageInterpolation = .high;
     }
 }
