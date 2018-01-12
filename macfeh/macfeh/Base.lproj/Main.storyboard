@@ -473,7 +473,10 @@
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfS-lP-otL" userLabel="Viewer Defaults Section Label">
                                 <rect key="frame" x="26" y="62" width="293" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Viewer Defaults" id="uoZ-D1-N8K">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="ngG-QV-9MQ"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Viewer defaults" id="uoZ-D1-N8K">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -486,7 +489,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="viewerDefaultsShowBackgroundCheckboxAction:" target="1aG-YB-5jA" id="NeJ-uC-fRo"/>
+                                    <action selector="viewerDefaultsShowBackgroundAction:" target="1aG-YB-5jA" id="0Eq-Tl-HVf"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-KP-K6M" userLabel="Enable Shadow Checkbox">
@@ -496,7 +499,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="viewerDefaultsEnableShadowCheckboxAction:" target="1aG-YB-5jA" id="BIo-g0-e0R"/>
+                                    <action selector="viewerDefaultsEnableShadowAction:" target="1aG-YB-5jA" id="c69-Ir-Ck3"/>
                                 </connections>
                             </button>
                         </subviews>
