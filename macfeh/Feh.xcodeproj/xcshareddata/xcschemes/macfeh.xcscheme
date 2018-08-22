@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AED309431DFF976B0053AA53"
-               BuildableName = "macfeh.app"
-               BlueprintName = "macfeh"
-               ReferencedContainer = "container:macfeh.xcodeproj">
+               BuildableName = "Feh.app"
+               BlueprintName = "Feh"
+               ReferencedContainer = "container:Feh.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -34,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AED309541DFF976B0053AA53"
-               BuildableName = "macfehTests.xctest"
-               BlueprintName = "macfehTests"
-               ReferencedContainer = "container:macfeh.xcodeproj">
+               BuildableName = "FehTests.xctest"
+               BlueprintName = "FehTests"
+               ReferencedContainer = "container:Feh.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AED3095F1DFF976B0053AA53"
-               BuildableName = "macfehUITests.xctest"
-               BlueprintName = "macfehUITests"
-               ReferencedContainer = "container:macfeh.xcodeproj">
+               BuildableName = "FehUITests.xctest"
+               BlueprintName = "FehUITests"
+               ReferencedContainer = "container:Feh.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AED309431DFF976B0053AA53"
-            BuildableName = "macfeh.app"
-            BlueprintName = "macfeh"
-            ReferencedContainer = "container:macfeh.xcodeproj">
+            BuildableName = "Feh.app"
+            BlueprintName = "Feh"
+            ReferencedContainer = "container:Feh.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,7 +65,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -78,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AED309431DFF976B0053AA53"
-            BuildableName = "macfeh.app"
-            BlueprintName = "macfeh"
-            ReferencedContainer = "container:macfeh.xcodeproj">
+            BuildableName = "Feh.app"
+            BlueprintName = "Feh"
+            ReferencedContainer = "container:Feh.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -104,9 +102,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AED309431DFF976B0053AA53"
-            BuildableName = "macfeh.app"
-            BlueprintName = "macfeh"
-            ReferencedContainer = "container:macfeh.xcodeproj">
+            BuildableName = "Feh.app"
+            BlueprintName = "Feh"
+            ReferencedContainer = "container:Feh.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

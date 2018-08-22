@@ -44,15 +44,15 @@
 		AE5817B51DFFD46B00AA74AE /* GeneralPreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesController.swift; sourceTree = "<group>"; };
 		AE5817B91DFFD52200AA74AE /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		AEAA6546200954B3009691C6 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
-		AED309441DFF976B0053AA53 /* macfeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macfeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED309441DFF976B0053AA53 /* Feh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED309471DFF976B0053AA53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AED3094B1DFF976B0053AA53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AED3094E1DFF976B0053AA53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AED309501DFF976B0053AA53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AED309551DFF976B0053AA53 /* macfehTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macfehTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED309551DFF976B0053AA53 /* FehTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FehTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED309591DFF976B0053AA53 /* macfehTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macfehTests.swift; sourceTree = "<group>"; };
 		AED3095B1DFF976B0053AA53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AED309601DFF976B0053AA53 /* macfehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macfehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED309601DFF976B0053AA53 /* FehUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FehUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED309641DFF976B0053AA53 /* macfehUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macfehUITests.swift; sourceTree = "<group>"; };
 		AED309661DFF976B0053AA53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AED3097A1DFF9BA70053AA53 /* ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
@@ -113,9 +113,9 @@
 		AED309451DFF976B0053AA53 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AED309441DFF976B0053AA53 /* macfeh.app */,
-				AED309551DFF976B0053AA53 /* macfehTests.xctest */,
-				AED309601DFF976B0053AA53 /* macfehUITests.xctest */,
+				AED309441DFF976B0053AA53 /* Feh.app */,
+				AED309551DFF976B0053AA53 /* FehTests.xctest */,
+				AED309601DFF976B0053AA53 /* FehUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,9 +207,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AED309431DFF976B0053AA53 /* macfeh */ = {
+		AED309431DFF976B0053AA53 /* Feh */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AED309691DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "macfeh" */;
+			buildConfigurationList = AED309691DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "Feh" */;
 			buildPhases = (
 				AED309401DFF976B0053AA53 /* Sources */,
 				AED309411DFF976B0053AA53 /* Frameworks */,
@@ -219,14 +219,14 @@
 			);
 			dependencies = (
 			);
-			name = macfeh;
+			name = Feh;
 			productName = macfeh;
-			productReference = AED309441DFF976B0053AA53 /* macfeh.app */;
+			productReference = AED309441DFF976B0053AA53 /* Feh.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AED309541DFF976B0053AA53 /* macfehTests */ = {
+		AED309541DFF976B0053AA53 /* FehTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AED3096C1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "macfehTests" */;
+			buildConfigurationList = AED3096C1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "FehTests" */;
 			buildPhases = (
 				AED309511DFF976B0053AA53 /* Sources */,
 				AED309521DFF976B0053AA53 /* Frameworks */,
@@ -237,14 +237,14 @@
 			dependencies = (
 				AED309571DFF976B0053AA53 /* PBXTargetDependency */,
 			);
-			name = macfehTests;
+			name = FehTests;
 			productName = macfehTests;
-			productReference = AED309551DFF976B0053AA53 /* macfehTests.xctest */;
+			productReference = AED309551DFF976B0053AA53 /* FehTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AED3095F1DFF976B0053AA53 /* macfehUITests */ = {
+		AED3095F1DFF976B0053AA53 /* FehUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AED3096F1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "macfehUITests" */;
+			buildConfigurationList = AED3096F1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "FehUITests" */;
 			buildPhases = (
 				AED3095C1DFF976B0053AA53 /* Sources */,
 				AED3095D1DFF976B0053AA53 /* Frameworks */,
@@ -255,9 +255,9 @@
 			dependencies = (
 				AED309621DFF976B0053AA53 /* PBXTargetDependency */,
 			);
-			name = macfehUITests;
+			name = FehUITests;
 			productName = macfehUITests;
-			productReference = AED309601DFF976B0053AA53 /* macfehUITests.xctest */;
+			productReference = AED309601DFF976B0053AA53 /* FehUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -287,7 +287,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AED3093F1DFF976B0053AA53 /* Build configuration list for PBXProject "macfeh" */;
+			buildConfigurationList = AED3093F1DFF976B0053AA53 /* Build configuration list for PBXProject "Feh" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -300,9 +300,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AED309431DFF976B0053AA53 /* macfeh */,
-				AED309541DFF976B0053AA53 /* macfehTests */,
-				AED3095F1DFF976B0053AA53 /* macfehUITests */,
+				AED309431DFF976B0053AA53 /* Feh */,
+				AED309541DFF976B0053AA53 /* FehTests */,
+				AED3095F1DFF976B0053AA53 /* FehUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -370,12 +370,12 @@
 /* Begin PBXTargetDependency section */
 		AED309571DFF976B0053AA53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AED309431DFF976B0053AA53 /* macfeh */;
+			target = AED309431DFF976B0053AA53 /* Feh */;
 			targetProxy = AED309561DFF976B0053AA53 /* PBXContainerItemProxy */;
 		};
 		AED309621DFF976B0053AA53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AED309431DFF976B0053AA53 /* macfeh */;
+			target = AED309431DFF976B0053AA53 /* Feh */;
 			targetProxy = AED309611DFF976B0053AA53 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -537,7 +537,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = drabweb.macfehTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macfeh.app/Contents/MacOS/macfeh";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Feh.temp_caseinsensitive_rename.app/Contents/MacOS/Feh.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
@@ -552,7 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = drabweb.macfehTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macfeh.app/Contents/MacOS/macfeh";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Feh.temp_caseinsensitive_rename.app/Contents/MacOS/Feh.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
@@ -587,7 +587,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AED3093F1DFF976B0053AA53 /* Build configuration list for PBXProject "macfeh" */ = {
+		AED3093F1DFF976B0053AA53 /* Build configuration list for PBXProject "Feh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AED309671DFF976B0053AA53 /* Debug */,
@@ -596,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AED309691DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "macfeh" */ = {
+		AED309691DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "Feh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AED3096A1DFF976B0053AA53 /* Debug */,
@@ -605,7 +605,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AED3096C1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "macfehTests" */ = {
+		AED3096C1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "FehTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AED3096D1DFF976B0053AA53 /* Debug */,
@@ -614,7 +614,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AED3096F1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "macfehUITests" */ = {
+		AED3096F1DFF976B0053AA53 /* Build configuration list for PBXNativeTarget "FehUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AED309701DFF976B0053AA53 /* Debug */,
