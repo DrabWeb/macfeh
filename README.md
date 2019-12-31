@@ -6,7 +6,7 @@ Like feh, but on macOS
 
 
 ## Requirements
-macOS 10.11+ (tested on 10.12)
+macOS 10.11+ (tested on 10.15)
 
 
 ## Features
@@ -16,7 +16,7 @@ macOS 10.11+ (tested on 10.12)
 * Command line support
 
 ## Compiling
-* **Requirements**: Xcode 9
+* **Requirements**: Xcode 11 and Swift 5
 * Open `macfeh.xcodeproj` in Xcode.
 * Select the `macfeh Release` scheme from the pop up button in the top left.
 * Press the Run button, macfeh will compile and launch.
