@@ -138,7 +138,7 @@ class ImageViewerController: NSViewController, NSWindowDelegate {
     func showBackground(_ state: Bool) {
         if state {
             window!.isOpaque = true;
-            window!.backgroundColor = NSColor(catalogName: NSColorList.Name(rawValue: "System"), colorName: NSColor.Name(rawValue: "windowBackgroundColor"));
+            window!.backgroundColor = NSColor(catalogName: NSColorList.Name("System"), colorName: NSColor.Name("windowBackgroundColor"));
         }
         else {
             window!.isOpaque = false;

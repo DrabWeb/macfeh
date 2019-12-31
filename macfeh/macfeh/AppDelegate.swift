@@ -52,9 +52,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func openNewViewer(for file: String) {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil);
+        let storyboard = NSStoryboard(name: "Main", bundle: nil);
 
-        if let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "imageViewerWindowController")) as? NSWindowController {
+        if let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("imageViewerWindowController")) as? NSWindowController {
             if let imageViewer = windowController.contentViewController as? ImageViewerController {
                 windowController.loadWindow();
                 windowController.showWindow(self);
