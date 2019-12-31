@@ -97,6 +97,7 @@ class ImageViewerController: NSViewController, NSWindowDelegate {
                     self.showShadow((NSApp.delegate as! AppDelegate).preferences.viewerDefaultsEnableShadow);
 
                     self.representedImage = image;
+                    self.imageView.zoomFactor = 1;
                 }
             }
             else {
