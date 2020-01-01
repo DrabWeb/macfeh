@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
-        <plugIn identifier="com.apple.imagekit.ibplugin" version="13771"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.imagekit.ibplugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -197,7 +197,7 @@
         <scene sceneID="dEB-HL-Vun">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="LSH-Ko-J7k" userLabel="Preferences Window Controller" sceneMemberID="viewController">
-                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="N9E-5i-TyD" customClass="Window" customModule="macfeh" customModuleProvider="target">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="N9E-5i-TyD" customClass="Window" customModule="macfeh" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="229" y="249" width="345" height="99"/>
@@ -226,8 +226,7 @@
                     <tabView key="tabView" misplaced="YES" type="noTabsNoBorder" id="aoc-w0-qjy">
                         <rect key="frame" x="-24" y="0.0" width="345" height="99"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <font key="font" metaFont="message"/>
-                        <tabViewItems/>
+                        <font key="font" metaFont="system"/>
                         <connections>
                             <outlet property="delegate" destination="caW-iv-Ge8" id="v2T-nE-OLX"/>
                         </connections>
@@ -246,11 +245,11 @@
             <objects>
                 <viewController title="General" id="1aG-YB-5jA" userLabel="Preferences General View Controller" customClass="GeneralPreferencesController" customModule="macfeh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="fKt-h7-5Fe">
-                        <rect key="frame" x="0.0" y="0.0" width="345" height="99"/>
+                        <rect key="frame" x="0.0" y="0.0" width="345" height="98"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfS-lP-otL" userLabel="Viewer Defaults Section Label">
-                                <rect key="frame" x="26" y="62" width="293" height="17"/>
+                                <rect key="frame" x="26" y="62" width="293" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="289" id="ngG-QV-9MQ"/>
                                 </constraints>
@@ -307,7 +306,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="imageViewerWindowController" id="B8D-0N-5wS" userLabel="Image Viewer Window Controller" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA" customClass="Window" customModule="macfeh" customModuleProvider="target">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA" customClass="Window" customModule="macfeh" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -324,7 +323,7 @@
             </objects>
             <point key="canvasLocation" x="75" y="232"/>
         </scene>
-        <!--Image Viewer Controller-->
+        <!--Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ImageViewerController" customModule="macfeh" customModuleProvider="target" sceneMemberID="viewController">
@@ -354,11 +353,11 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <edgeInsets key="contentInsets" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="iCt-5u-4QU">
+                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="iCt-5u-4QU">
                                     <rect key="frame" x="0.0" y="254" width="480" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="sbX-G0-P3e">
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="sbX-G0-P3e">
                                     <rect key="frame" x="464" y="0.0" width="16" height="270"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -372,6 +371,14 @@
                             <constraint firstItem="1hx-oH-TT1" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="nY1-02-eWb"/>
                             <constraint firstItem="1hx-oH-TT1" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="rCf-6A-bZb"/>
                         </constraints>
+                        <gestureRecognizers>
+                            <magnificationGestureRecognizer delaysMagnificationEvents="YES" magnification="0.0" id="Yq5-c0-dBz" customClass="ImageViewerZoomGestureRecognizer" customModule="macfeh" customModuleProvider="target">
+                                <connections>
+                                    <outlet property="controller" destination="XfG-lQ-9wD" id="V0f-xH-2Pe"/>
+                                    <outlet property="imageView" destination="ET6-I9-Mv4" id="g1W-cJ-xih"/>
+                                </connections>
+                            </magnificationGestureRecognizer>
+                        </gestureRecognizers>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="ET6-I9-Mv4" id="awN-xF-Vt4"/>

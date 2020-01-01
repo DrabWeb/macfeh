@@ -19,6 +19,7 @@
 		AED309651DFF976B0053AA53 /* macfehUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED309641DFF976B0053AA53 /* macfehUITests.swift */; };
 		AED3097B1DFF9BA70053AA53 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3097A1DFF9BA70053AA53 /* ImageExtensions.swift */; };
 		AEED5EAB1DFFD38100649545 /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED5EAA1DFFD38100649545 /* ImageViewerController.swift */; };
+		B63995FB23BD195E007D157B /* ImageViewerZoomGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63995FA23BD195E007D157B /* ImageViewerZoomGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		AED309661DFF976B0053AA53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AED3097A1DFF9BA70053AA53 /* ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		AEED5EAA1DFFD38100649545 /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerController.swift; sourceTree = "<group>"; };
+		B63995FA23BD195E007D157B /* ImageViewerZoomGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerZoomGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				AED309471DFF976B0053AA53 /* AppDelegate.swift */,
 				AED309751DFF97F30053AA53 /* Storyboards */,
+				B63995F923BD1937007D157B /* Gestures */,
 				AED309721DFF97F00053AA53 /* Controllers */,
 				AE5817B71DFFD50800AA74AE /* Objects */,
 				AED309791DFF9B9C0053AA53 /* Utilities */,
@@ -202,6 +205,14 @@
 				AE5817B51DFFD46B00AA74AE /* GeneralPreferencesController.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		B63995F923BD1937007D157B /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				B63995FA23BD195E007D157B /* ImageViewerZoomGestureRecognizer.swift */,
+			);
+			path = Gestures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE47904B1E009D8D00BB2038 /* ImageViewerScrollView.swift in Sources */,
+				B63995FB23BD195E007D157B /* ImageViewerZoomGestureRecognizer.swift in Sources */,
 				AED3097B1DFF9BA70053AA53 /* ImageExtensions.swift in Sources */,
 				AE47904D1E009FC300BB2038 /* ImageViewerImageView.swift in Sources */,
 				AE5817B61DFFD46B00AA74AE /* GeneralPreferencesController.swift in Sources */,

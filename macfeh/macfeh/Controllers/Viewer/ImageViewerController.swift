@@ -109,6 +109,12 @@ class ImageViewerController: NSViewController, NSWindowDelegate {
             }
         }
     }
+    
+    func zoomClamp() {
+        if (imageView.zoomFactor < 1.0) {
+            imageView.zoomFactor = 1.0
+        }
+    }
 
     @objc func zoomIn() {
         imageView.zoomIn(self);
