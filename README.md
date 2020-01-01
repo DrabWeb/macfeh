@@ -1,6 +1,6 @@
 # macfeh
 
-![Screenshot](https://raw.githubusercontent.com/DrabWeb/macfeh/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/frayment/macfeh/master/screenshot.png)
 
 Like feh, but on macOS
 
